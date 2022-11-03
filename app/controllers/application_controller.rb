@@ -22,7 +22,7 @@ get '/baked_goods/by_price' do
 end
 
 get '/baked_goods/most_expensive' do 
-  baked_good = BakedGood.order(price: :desc).limit(1)
+  baked_good = BakedGood.order(price: :desc).first
   baked_good.to_json
 end
 
